@@ -5,5 +5,5 @@ RUN apt-get update && \
     wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha && \
     chmod +x subspace-cli && \
     mv subspace-cli /usr/local/bin/
-
+CMD subspace-cli init
 ENTRYPOINT ["subspace-cli", "farm", "--verbose"]
