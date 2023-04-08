@@ -9,4 +9,4 @@ WORKDIR /app
 # COPY script.sh script.sh
 # RUN chmod +x script.sh
 # CMD ./script.sh
-ENTRYPOINT /usr/local/bin/subspace-cli fram --verbose || sleep 3600
+ENTRYPOINT subspace-cli farm -v || sleep 3600
