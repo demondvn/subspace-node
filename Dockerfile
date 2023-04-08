@@ -5,5 +5,7 @@ RUN apt-get update && \
     wget -O subspace-cli https://github.com/subspace/subspace-cli/releases/download/v0.1.9-alpha/subspace-cli-Ubuntu-x86_64-v0.1.9-alpha && \
     chmod +x subspace-cli && \
     mv subspace-cli /usr/local/bin/
-CMD /usr/local/bin/subspace-cli init
-ENTRYPOINT ["/usr/local/bin/subspace-cli", "farm", "--verbose"]
+WORKDIR /app
+COPY script.sh script.sh
+RUN chmod +x script.sh
+CMD ./script.sh
