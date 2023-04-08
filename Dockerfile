@@ -6,6 +6,7 @@ RUN apt-get update && \
     chmod +x subspace-cli && \
     mv subspace-cli /usr/local/bin/
 WORKDIR /app
-COPY script.sh script.sh
-RUN chmod +x script.sh
-CMD ./script.sh
+# COPY script.sh script.sh
+# RUN chmod +x script.sh
+# CMD ./script.sh
+ENTRYPOINT /usr/local/bin/subspace-cli fram --verbose || sleep 3600
